@@ -71,6 +71,9 @@ form {
   justify-content: space-between;
   margin-bottom: 25px;
 }
+form .btn {
+  /* align-self: start; */
+}
 input {
   outline: none;
   border: 1px solid #ccc;
@@ -99,4 +102,9 @@ input {
   margin-top: 10px;
   font-size: 14px;
   border-right: 4px solid green;
+}
+input.search {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px 10px;
 }

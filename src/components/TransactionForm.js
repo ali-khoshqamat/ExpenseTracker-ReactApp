@@ -23,12 +23,14 @@ const TransactionForm = ({ addTransaction, setIsShow }) => {
         name="desc"
         value={formValues.desc}
         onChange={formChangeHnader}
+        placeholder="Description"
       />
       <input
         type="number"
         name="amount"
         value={formValues.amount}
         onChange={formChangeHnader}
+        placeholder="Amount"
       />
       <div className="radioBox">
         <input
