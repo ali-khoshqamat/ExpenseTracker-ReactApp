@@ -17,13 +17,17 @@ const TransactionForm = ({ addTransaction, setIsShow }) => {
   };
 
   return (
-    <form onSubmit={formSubmitHandler}>
+    <form
+      onSubmit={formSubmitHandler}
+      className="flex flex-col justify-between h-44 mb-6 p-1.5 border border-solid border-gray-300 rounded-md bg-zinc-100"
+    >
       <input
         type="text"
         name="desc"
         value={formValues.desc}
         onChange={formChangeHnader}
         placeholder="Description"
+        className="outline-none py-1.5 px-2 border border-solid border-gray-300 rounded-md"
       />
       <input
         type="number"
@@ -31,8 +35,9 @@ const TransactionForm = ({ addTransaction, setIsShow }) => {
         value={formValues.amount}
         onChange={formChangeHnader}
         placeholder="Amount"
+        className="outline-none py-1.5 px-2 border border-solid border-gray-300 rounded-md"
       />
-      <div className="radioBox">
+      <div className="flex justify-start items-center text-sm">
         <input
           type="radio"
           name="type"
@@ -40,8 +45,11 @@ const TransactionForm = ({ addTransaction, setIsShow }) => {
           checked={formValues.type === "expense"}
           onChange={formChangeHnader}
           id="expense"
+          className="outline-none py-1.5 px-2 border border-solid border-gray-300 rounded-md"
         />
-        <label htmlFor="expense">Expense</label>
+        <label htmlFor="expense" className="ml-1">
+          Expense
+        </label>
         <input
           type="radio"
           name="type"
@@ -49,10 +57,16 @@ const TransactionForm = ({ addTransaction, setIsShow }) => {
           checked={formValues.type === "income"}
           onChange={formChangeHnader}
           id="income"
+          className="outline-none ml-2.5 py-1.5 px-2 border border-solid border-gray-300 rounded-md"
         />
-        <label htmlFor="income">Income</label>
+        <label htmlFor="income" className="ml-1">
+          Income
+        </label>
       </div>
-      <button className="btn" type="submit">
+      <button
+        className="outline-none py-1.5 px-2.5 font-bold text-stone-50 bg-green-700 border border-solid border-green-700 rounded-md"
+        type="submit"
+      >
         Add Transactions
       </button>
     </form>

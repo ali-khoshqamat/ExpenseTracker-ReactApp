@@ -8,7 +8,6 @@ const ExpenseApp = () => {
   const [transactions, setTransactions] = useState([]);
 
   const addTransaction = (formValues) => {
-    // console.log(formValues);
     setTransactions([...transactions, { ...formValues, id: Date.now() }]);
   };
   useEffect(() => {
@@ -23,7 +22,7 @@ const ExpenseApp = () => {
     setIncome(inc);
   }, [transactions]);
   return (
-    <section className="container">
+    <section className="flex flex-col w-[350px] bg-white p-2.5 border border-solid border-gray-300 rounded-md">
       <OverView
         expense={expense}
         income={income}

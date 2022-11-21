@@ -22,32 +22,33 @@ const Transactions = ({ transactions }) => {
   };
 
   if (!transactions.length)
-    return <p style={{ marginTop: "10px" }}>add some transaction!</p>;
+    return <p className="mt-4 ml-2">add some transaction!</p>;
   return (
-    <section style={{ marginTop: "15px" }}>
-      <p>Transactions!</p>
+    <section className="mt-5">
+      <p className="font-bold">Transactions:</p>
       <input
         type="text"
         value={searchItem}
         onChange={changeHandler}
         placeholder="Search..."
-        className="search"
+        className="outline-none w-full py-1.5 px-2 mt-1 border border-solid border-stone-300 rounded-md"
       />
       {filteredTnx.length ? (
         filteredTnx.map((transaction) => (
           <div
-            className="transaction"
+            className={`flex justify-between bg-zinc-100 p-2.5 mt-2.5 font-bold text-sm rounded-md border-r-4 border-solid ${
+              transaction.type === "expense"
+                ? "border-red-600"
+                : "border-green-700"
+            }`}
             key={transaction.id}
-            style={{
-              borderRight: transaction.type === "expense" && "4px solid red",
-            }}
           >
             <span>{transaction.desc}</span>
             <span>${transaction.amount}</span>
           </div>
         ))
       ) : (
-        <p style={{ marginTop: "10px", fontSize: "14px" }}>no item matchs!</p>
+        <p className="mt-2.5 text-sm">no item matchs!</p>
       )}
     </section>
   );
