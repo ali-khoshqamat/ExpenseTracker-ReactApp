@@ -83,10 +83,20 @@ input {
   align-items: center;
   font-size: 14px;
 }
-.radioBox :nth-last-child(2){
+.radioBox :nth-last-child(2) {
   margin-left: 10px;
 }
-
 .radioBox label {
   margin-left: 3px;
+}
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: #f4f4f5;
+  padding: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 14px;
+  border-right: 4px solid green;
 }
